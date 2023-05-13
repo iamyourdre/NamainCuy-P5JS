@@ -1,36 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Upload Gambar ke Imgbb</title>
+  <title>NamainCuy | Masukkin nama di sertifikat</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"/>
-
   <script src="https://kit.fontawesome.com/9b51d73269.js" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="resources/CountAPI.js" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="resources/style.css">
 
 </head>
-<body>
+<body class="bg-light">
+  
+  <nav class="navbar navbar-expand-lg bg-light py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span class="text-left fw-bold my-auto text-primary"><span class="header-underline anim-typewriter">Namain</span>Cuy<span class="text-success fw-light blink">|</span></span>
+      </a>
+    </div>
+  </nav>
+  
   <div class="container mt-5">
+
     <div class="row">
-      <div class="col-lg-6 mx-auto">
-        <h2 class="text-center mb-4">Upload Gambar ke Imgbb</h2>
-        <form id="form-upload" enctype="multipart/form-data">
-          <div class="mb-3">
-            <label for="file-upload" class="form-label">Pilih gambar untuk diupload:</label>
-            <input type="file" id="file-upload" name="image" class="form-control">
-          </div>
-          <button type="submit" id="btn-upload" class="btn btn-primary">Upload</button>
+      <div class="col-12 col-md-8 py-4 mx-auto text-center">
+        <!-- <p>NamainCuy adalah tools untuk mencantumkan nama peserta pada sertifikat secara massal dan otomatis. Kamu hanya perlu memasukkan daftar nama yang ingin dicantumkan di sertifikat, kemudian mengklik submit, dan sertifikat akan otomatis diberi nama tiap peserta dan disimpan menjadi format file gambar (.png).</p> -->
+        <p class="display-5 pb-2 fw-bold text-primary">Masukkin nama di sertifikat secara massal & <span class="text-success">otomatis.</span></p>
+        <p class="px-5 fs-6 text-primary pb-3">Cukup upload sertifikat & masukkin daftar nama. Aplikasi akan otomatis mencantumkan nama tiap peserta lalu mengunduh menjadi format file gambar yagesya!</p>
+        
+        <form id="form-upload" enctype="multipart/form-data" class="d-none">
+          <input type="file" id="file-upload" name="image">
         </form>
+        <label for="file-upload"> 
+          <span class="btn btn-light-primary fw-bold py-2 px-3" id="btn-upload"><i class="fa-solid fa-image"></i>&nbsp; Upload Sertifikat</span>&nbsp;
+        </label>
+        <a href="https://saweria.co/iamyourdre" target="_blank">
+          <button class="btn btn-success-primary fw-bold py-2 px-3" id="btn-upload"><i class="fas fa-donate"></i>&nbsp; Saweria</button>
+        </a>
       </div>
     </div>
+
+    <div class="row py-5 mt-5">
+      <div class="col-12 col-lg-4">
+        <div class="box-success rounded h-100 text-center py-4">
+          <i class="fa-solid fa-hand-holding-heart h3"></i>
+            <p class="h4 fw-bold">Gratis</p>
+            <p>Tanpa iklan dan nggak dikenakan biaya apapun. Kamu juga bisa dukung pembuat melalui <a href="https://saweria.co/iamyourdre" class="text-primary fw-bold">saweria.co/iamyourdre</a></p>
+            <a href="https://instagram.com/iamyourdre" target="_blank" class="text-primary text-decoration-none fw-bold"><i class="fa-brands fa-square-instagram"></i> iamyourdre</a> &nbsp; 
+            <a href="https://web.facebook.com/profile.php?id=100086947792896" target="_blank" class="text-primary text-decoration-none fw-bold"><i class="fa-brands fa-square-facebook"></i> Adrian</a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 mt-4">
+        <div class="box-light rounded h-100 text-center py-4">
+        <i class="fa-solid fa-user-shield h3"></i>
+            <p class="h4 fw-bold">Privasi Aman</p>
+            <span>Sertifikat atau gambar yang kamu upload akan otomatis terhapus dalam 10 menit setelah diupload.</span>
+        </div>
+      </div>
+      <div class="col-6 col-lg-4 mt-4">
+        <div class="box-light rounded h-100 text-center py-4">
+          <i class="fa-solid fa-wand-sparkles h3"></i>
+            <p class="h4 fw-bold">Sat Set Jebret</p>
+            <span>Proses cepat tanpa menurunkan kualitas gambar pada hasil. Oke banget gak tuh masbro?</span>
+        </div>
+      </div>
+    </div>
+    
   </div>
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <footer class="bg-light border py-4 mt-5 text-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-1">
+            <span class="text-left fw-bold my-auto text-primary">
+              &copy; 2023 <span class="header-underline anim-typewriter">Namain</span>Cuy<span class="text-success fw-light blink">|</span></span>
+          </p>
+          <p class="m-0">
+            <a href="https://instagram.com/iamyourdre" target="_blank" class="text-primary text-decoration-none d-inline fw-bold"><i class="fa-brands fa-square-instagram h4"></i></a>&nbsp;
+            <a href="https://web.facebook.com/profile.php?id=100086947792896" target="_blank" class="text-primary text-decoration-none d-inline fw-bold"><i class="fa-brands fa-square-facebook h4"></i></a>&nbsp;
+            <a href="https://github.com/iamyourdre" target="_blank" class="text-primary text-decoration-none d-inline fw-bold"><i class="fa-brands fa-square-github h4"></i></a>&nbsp;
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="resources/ImgBB.js"></script>
   </body>

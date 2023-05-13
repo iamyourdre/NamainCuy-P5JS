@@ -1,44 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
 
-* {
+.text-decoration-none {
   text-decoration: none !important;
 }
 body {
-    font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 .fw-bold {
-    font-weight: 700 !important;
+  font-weight: 800 !important;
 }
-.fw-bolder {
-    font-weight: 800 !important;
+.fw-semibold {
+  font-weight: 600 !important;
 }
-
+.header-underline {
+  text-decoration: underline solid #e6ffa6 !important;
+  text-decoration-thickness: 3px !important;
+}
 .text-dark {
-    color: #183153 !important;
-  }
+  color: #564f7a !important;
+}
+.text-light {
+  color: #ffffff !important;
+}
 .text-primary {
-    color: #000 !important;
-  }
-.text-secondary {
-    color: rgb(95, 105, 125) !important;
-  }
-.text-blue {
-    color: #1c7ed6 !important;
-  }
+  color: #917efe !important;
+}
+.text-success {
+  color: #b4df49 !important;
+}
+.bg-light {
+  background-color: #ffffff !important;
+  color: #020317;
+}
+.bg-dark {
+  background-color: #917efe !important;
+}
+.bg-success {
+  background-color: #d9ff7a !important;
+  color: #020317;
+}
 
-  .spin {
-    animation-name: spin;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+.box-light {
+  background-color: #ffffff !important;
+  color: #917efe;
+  border: 2px solid #917efe;
+  -webkit-box-shadow: 0px 7px 0px 0px #917efe;
+  -moz-box-shadow: 0px 7px 0px 0px #917efe;
+  box-shadow: 0px 7px 0px 0px #917efe;
+  padding: 1rem;
+}
+.box-success {
+  background-color: #d9ff7a !important;
+  color: #917efe;
+  border: 2px solid #917efe;
+  -webkit-box-shadow: 0px 7px 0px 0px #917efe;
+  -moz-box-shadow: 0px 7px 0px 0px #917efe;
+  box-shadow: 0px 7px 0px 0px #917efe;
+  padding: 1rem;
+}
+
+.btn-light-primary {
+  background-color: #ffffff !important;
+  color: #917efe;
+  border: 2px solid #917efe !important;
+  -webkit-box-shadow: 0px 7px 0px 0px #917efe;
+  -moz-box-shadow: 0px 7px 0px 0px #917efe;
+  box-shadow: 0px 7px 0px 0px #917efe;
+  transition: none;
+}
+.btn-light-primary:hover {
+  color: #917efe;
+  background-color: #d1c8ff !important;
+  border-color: #917efe !important;
+}
+.btn-light-primary:active {
+  position: relative;
+  bottom: -4px;
+  color: #917efe !important;
+  background-color: #d1c8ff !important;
+  border: 2px solid #917efe !important;
+  -webkit-box-shadow: 0px 3px 0px 0px #917efe;
+  -moz-box-shadow: 0px 3px 0px 0px #917efe;
+  box-shadow: 0px 3px 0px 0px #917efe;
+}
+
+
+
+.btn-success-primary {
+  background-color: #d9ff7a !important;
+  color: #917efe;
+  border: 2px solid #917efe !important;
+  -webkit-box-shadow: 0px 7px 0px 0px #917efe;
+  -moz-box-shadow: 0px 7px 0px 0px #917efe;
+  box-shadow: 0px 7px 0px 0px #917efe;
+  transition: none;
+}
+.btn-success-primary:hover {
+  color: #917efe;
+  background-color: #cce984 !important;
+  border: 2px solid #917efe !important;
+}
+.btn-success-primary:active {
+  position: relative;
+  bottom: -4px;
+  color: #917efe !important;
+  background-color: #cce984 !important;
+  border: 2px solid #917efe !important;
+  -webkit-box-shadow: 0px 3px 0px 0px #917efe;
+  -moz-box-shadow: 0px 3px 0px 0px #917efe;
+  box-shadow: 0px 3px 0px 0px #917efe;
+}
+
+.custom-range::-webkit-slider-thumb {
+  background: #917efe;
+}
+
+.custom-range::-moz-range-thumb {
+  background: #917efe;
+}
+
+.custom-range::-ms-thumb {
+  background: #917efe;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  to {
+    transform: rotate(360deg);
   }
-  
+}
+
+.blink{
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes blink{
+  0%{opacity: 1;}
+  50%{opacity: 1;}
+  51%{opacity: 0;}
+  100%{opacity: 0;}
+}

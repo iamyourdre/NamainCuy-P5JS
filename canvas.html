@@ -13,34 +13,31 @@
   <script src="https://kit.fontawesome.com/9b51d73269.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="resources/style.css">
 </head>
-<body class="bg-dark-subtle text-primary">
-  <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link text-secondary" aria-current="page" href="#">Home</a>
-            <a class="nav-link text-secondary" href="#">Features</a>
-          </div>
-        </div>
-      </div>
+<body class="bg-light text-primary">
+  
+  <nav class="navbar navbar-expand-lg bg-light py-3 border">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <span class="text-left fw-bold my-auto text-primary"><span class="header-underline anim-typewriter">Namain</span>Cuy<span class="text-success fw-light blink">|</span></span>
+      </a>
+      <a href="https://saweria.co/iamyourdre" target="_blank">
+        <button class="btn btn-success-primary fw-bold py-2 px-3" id="btn-upload"><i class="fas fa-donate"></i>&nbsp; Saweria</button>
+      </a>
+    </div>
   </nav>
   
-  <div class="container pt-4">
+  <div class="container py-4">
       
       <div class="row">
           <div class="col-12 col-md-8 p-0 m-0 overflow-auto text-dark" id="thumbnail-container">
-              <div id="thumbnail-loading" class="bg-light shadow-sm rounded-3 h-100 position-relative">
+              <div id="thumbnail-loading" class="bg-light text-primary shadow-sm rounded-3 h-100 position-relative">
                 <div class="position-absolute top-50 start-50 translate-middle">
                   <p class="fw-bold h4"><i class="fa-regular fa-snowflake spin"></i> &nbsp;Tunggu Yahh!</p>
                   <p>Gambar sedang diproses.</p>
                 </div>
               </div>
               <div id="thumbnail" class="d-none"></div>
-              <div id="namain-loading" class="bg-light shadow-sm rounded-3 h-100 position-relative text-center d-none">
+              <div id="namain-loading" class="bg-light text-primary shadow-sm rounded-3 h-100 position-relative text-center d-none">
                 <div class="position-absolute top-50 start-50 translate-middle text-center">
                   <p class="fw-bold h4"><i class="fa-regular fa-snowflake spin"></i> &nbsp;Lagi Namain</p>
                   <p>
@@ -48,32 +45,29 @@
                   </p>
                 </div>
               </div>
-              <div id="namain-done" class="bg-light shadow-sm rounded-3 h-100 position-relative text-center d-none">
+              <div id="namain-done" class="bg-light text-primary shadow-sm rounded-3 h-100 position-relative text-center d-none">
                 <div class="position-absolute top-50 start-50 translate-middle">
                   <p class="fw-bold h4"><i class="fa-regular fa-circle-check"></i> Namain Selesai!</p>
                   <p>Mau nambahin nama lainnya lagi?</p>
                   <div class="d-grid pb-2">
-                    <button class="btn btn-primary" onclick="reset()">Ya</button>
-                  </div>      
-                  <a href="/" class="d-grid pb-2">
-                    <button class="btn btn-light text-dark border"><i class="fa-solid fa-image"></i>&nbsp;  Ganti Gambar</button>
-                  </a>
+                    <button class="btn btn-light-primary fw-bold py-2 px-3 mb-2" onclick="reset()"><i class="fa-solid fa-rotate"></i>&nbsp; Ya, Tambah Lagi</span></button>
+                  </div>
                 </div>
               </div>
           </div>
           <div class="col-12 col-md-4 px-3 py-0 m-0">
-            <div class="bg-light shadow-sm rounded-3 px-3 py-4">
-              <h4 class="text-dark fw-bolder text-center"><i class="fa-solid fa-sliders"></i> &nbsp;Atur Teks</h4>
-              <hr>
+            <div class="box-light rounded rounded-3 px-3 py-4">
+              <h4 class="fw-bolder text-center"><i class="fa-solid fa-sliders"></i> &nbsp;Atur Teks</h4>
+              <hr>       
+              <a href="/" class="d-grid pb-2 text-decoration-none">
+                <button class="btn btn-light text-dark border"><i class="fa-solid fa-image"></i>&nbsp;  Ganti Sertifikat</button>
+              </a>
               <div class="form-group pb-2">
                 <label for="nama">Masukkan  Daftar Nama:</label>
                 <textarea class="form-control" id="daftar-nama" rows="2">
 Nama Peserta 1
 Nama Peserta 2</textarea>
-              </div>              
-              <a href="/" class="d-grid pb-2">
-                <button class="btn btn-light text-dark border"><i class="fa-solid fa-image"></i>&nbsp;  Ganti Gambar</button>
-              </a>
+              </div>
               <form id="font-form"  class="form-group pb-2">
                 <label for="font-select">Pilih Font:</label>
                 <select id="font-select" class="form-control rounded-0 rounded-top">
@@ -83,35 +77,63 @@ Nama Peserta 2</textarea>
               <div class="pb-2">
                 Posisi Teks Horizontal: <a id="slider-x-value">50</a>%
                 <div class="border rounded-pill">
-                  <input type="range" class="form-range" min="0" max="100" value="50" step="1" id="slider-x">
+                  <input type="range" class="form-range custom-range" min="0" max="100" value="50" step="1" id="slider-x">
                 </div>
               </div>
               <div class="pb-3">
                 Posisi Teks Vertikal: <a id="slider-y-value">50</a>%
                 <div class="border rounded-pill">
-                  <input type="range" class="form-range" min="0" max="100" value="50" step="1" id="slider-y">
+                  <input type="range" class="form-range custom-range" min="0" max="100" value="50" step="1" id="slider-y">
                 </div>
+              </div>
+              <div class="pb-3">
+                Ubah Ukuran Teks: <a id="slider-size-value">50</a>
+                <div class="border rounded-pill">
+                  <input type="range" class="form-range custom-range" min="1" max="100" value="50" step="1" id="slider-size">
+                </div>
+              </div>
+              <div class="pb-4">
+                Ubah Warna Teks:
+                <div class="input-group">
+                  <input type="color" class="form-control form-control-color" id="color-picker" value="#000000">
+                </div>                
               </div>
               <div class="d-none">
                   <h2 class="card-title" id="card-title">Preview</h2>
                   <p id="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
               </div>
               <div class="d-grid pb-2">
-                <button class="btn btn-primary" id="btn-download" onclick="download()">Namain!</button>
+                <button class="btn btn-success-primary fw-bold" id="btn-download" onclick="download()">Namain!</button>
               </div>
             </div>
           </div>
       </div>
 
   </div>
+
+  <footer class="bg-light border py-4 mt-5 text-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-1">
+            <span class="text-left fw-bold my-auto text-primary">
+              &copy; 2023 <span class="header-underline anim-typewriter">Namain</span>Cuy<span class="text-success fw-light blink">|</span></span>
+          </p>
+          <p class="m-0">
+            <a href="https://instagram.com/iamyourdre" target="_blank" class="text-primary text-decoration-none d-inline fw-bold"><i class="fa-brands fa-square-instagram h4"></i></a>&nbsp;
+            <a href="https://web.facebook.com/profile.php?id=100086947792896" target="_blank" class="text-primary text-decoration-none d-inline fw-bold"><i class="fa-brands fa-square-facebook h4"></i></a>&nbsp;
+            <a href="https://github.com/iamyourdre" target="_blank" class="text-primary text-decoration-none d-inline fw-bold"><i class="fa-brands fa-square-github h4"></i></a>&nbsp;
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
   
-<!-- Bootstrap 5 JS -->
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"
   ></script>
-  <!-- Google Fonts API JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 </body>
 </html>

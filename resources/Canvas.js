@@ -60,6 +60,8 @@ ThumbnailDimension.push(setThumbnailDimension());
 let textposx = ThumbnailDimension[0].width/2;
 let textposy = ThumbnailDimension[0].height/2;
 let textsize = 50;
+let newTextsize = 10;
+let textcolor = "#000";
 let canvasFont = "Wix Madefor Display";
 let textsizeRescale = textsize/ThumbnailDimension[0].rescale;
 
@@ -92,7 +94,7 @@ function draw() {
   textSize(textsize); // Mengatur ukuran teks
   // textFont('Wix Madefor Display'); // Mengatur jenis font
   textFont(canvasFont); // Mengatur jenis font
-  fill(255, 0, 0); // Mengatur warna teks menjadi merah
+  fill(textcolor); // Mengatur warna teks menjadi merah
   textAlign(CENTER, CENTER); // Mengatur align teks menjadi center
   text(namaPreview, textposx, textposy); // Menampilkan teks pada posisi tengah-tengah canvas
 }
@@ -156,18 +158,39 @@ namaTextArea.addEventListener('change', () => {
 
 // Slider untuk posisi teks horizontal
 const sliderX = document.getElementById('slider-x');
-const sliderXValue = document.getElementById('slider-x-value');
 sliderX.addEventListener('input', () => {
-  sliderXValue.innerText = sliderX.value;
+  document.getElementById('slider-x-value').innerText = sliderX.value;
   textposx = ThumbnailDimension[0].width*(sliderX.value/100);
 });
 
 // Slider untuk posisi teks vertikal
 const sliderY = document.getElementById('slider-y');
-const sliderYValue = document.getElementById('slider-y-value');
 sliderY.addEventListener('input', () => {
-  sliderYValue.innerText = sliderY.value;
+  document.getElementById('slider-y-value').innerText = sliderY.value;
   textposy = ThumbnailDimension[0].height*(sliderY.value/100);
 });
 
+// Slider untuk ukuran teks
+const sliderSize = document.getElementById('slider-size');
+sliderSize.addEventListener('input', () => {
+  document.getElementById('slider-size-value').innerText = sliderSize.value;
+  textsize = parseInt(sliderSize.value);
+});
 
+// Color picker untuk warna teks
+const colorPicker = document.getElementById('color-picker');
+colorPicker.addEventListener('input', function() {
+  textcolor = colorPicker.value;
+});
+
+// Ambil elemen slider
+const slider = document.getElementById('slider-t-size');
+
+// Tambahkan event listener pada perubahan nilai slider
+
+function textResize(value){
+  textsize = 10;
+}
+function textsizeCheck(){
+  console.log("textsize = "+textsize);
+}
