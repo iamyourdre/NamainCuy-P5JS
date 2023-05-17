@@ -60,10 +60,15 @@ ThumbnailDimension.push(setThumbnailDimension());
 let textposx = ThumbnailDimension[0].width/2;
 let textposy = ThumbnailDimension[0].height/2;
 let textsize = 50;
-let newTextsize = 10;
 let textcolor = "#000";
 let canvasFont = "Wix Madefor Display";
+
+let textsizeOriginal = textsize;
 let textsizeRescale = textsize/ThumbnailDimension[0].rescale;
+
+console.log("textsize = "+textsize);
+  console.log("ThumbnailDimension[0].rescale = "+ThumbnailDimension[0].rescale);
+  // console.log("textsizeRescale = "+textsizeRescale);
 
 // Menginisialisasi beberapa DOM
 const namaTextArea = document.getElementById('daftar-nama');
@@ -101,6 +106,9 @@ function draw() {
 
 function download() {
 
+  console.log("download -------------");
+  textsizeCheck();
+
   document.getElementById("btn-download").classList.add('btn-light', 'text-dark', 'border');
   document.getElementById("btn-download").disabled = true;
   
@@ -110,6 +118,10 @@ function download() {
 
   rescale();
   rescale();
+
+  console.log("rescale -------------");
+  textsizeCheck();
+
   // Mengunduh canvas menjadi gambar 
   for (let i = 0; i < namaArray.length; i++) {
     setTimeout(() => {
@@ -122,7 +134,9 @@ function download() {
       }
     }, i * 500);
   }
+
 }
+
 function rescale(){
   resizeCanvas(OriginalImg.width, OriginalImg.height);
   img.resize(OriginalImg.width, OriginalImg.height);
@@ -140,7 +154,7 @@ function reset(){
   img.resize(ThumbnailDimension[0].width, ThumbnailDimension[0].height);
   textposx = ThumbnailDimension[0].width*(sliderX.value/100);
   textposy = ThumbnailDimension[0].height*(sliderY.value/100);
-  textsize = textsizeRescale*ThumbnailDimension[0].rescale;
+  textsize = textsizeOriginal;
   namaArray = namaTextArea.value.split('\n');
   textChange(namaArray[0]);
 }
@@ -175,6 +189,11 @@ const sliderSize = document.getElementById('slider-size');
 sliderSize.addEventListener('input', () => {
   document.getElementById('slider-size-value').innerText = sliderSize.value;
   textsize = parseInt(sliderSize.value);
+  textsizeOriginal = textsize;
+  textsizeRescale = textsize/ThumbnailDimension[0].rescale;
+  console.log("textsize = "+textsize)
+  console.log("textsizeOriginal = "+textsizeOriginal)
+  console.log("textsizeRescale = "+textsize/ThumbnailDimension[0].rescale)
 });
 
 // Color picker untuk warna teks
@@ -188,9 +207,9 @@ const slider = document.getElementById('slider-t-size');
 
 // Tambahkan event listener pada perubahan nilai slider
 
-function textResize(value){
-  textsize = 10;
-}
+// function textResize(value){
+//   textsize = 10;
+// }
 function textsizeCheck(){
   console.log("textsize = "+textsize);
 }
