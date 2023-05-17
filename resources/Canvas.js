@@ -111,7 +111,13 @@ function download() {
 
   document.getElementById("btn-download").classList.add('btn-light', 'text-dark', 'border');
   document.getElementById("btn-download").disabled = true;
-  
+  document.getElementById("daftar-nama").disabled = true;
+  document.getElementById("font-select").disabled = true;
+  document.getElementById("font-search").disabled = true;
+  document.getElementById("slider-x").disabled = true;
+  document.getElementById("slider-y").disabled = true;
+  document.getElementById("slider-size").disabled = true;
+  document.getElementById("color-picker").disabled = true;
   document.getElementById("thumbnail").classList.add('d-none');
   document.getElementById("namain-loading").classList.remove('d-none');
   var namainCount = document.getElementById("namain-count");
@@ -147,6 +153,14 @@ function rescale(){
 function reset(){
   document.getElementById("btn-download").classList.remove('btn-light', 'text-dark', 'border');
   document.getElementById("btn-download").disabled = false;
+  document.getElementById("daftar-nama").disabled = false;
+  document.getElementById("font-select").disabled = false;
+  document.getElementById("font-search").disabled = false;
+  document.getElementById("slider-x").disabled = false;
+  document.getElementById("slider-y").disabled = false;
+  document.getElementById("slider-size").disabled = false;
+  document.getElementById("color-picker").disabled = false;
+  document.getElementById("thumbnail").classList.add('d-none');
   document.getElementById("thumbnail").classList.remove('d-none');
   document.getElementById("namain-loading").classList.add('d-none');
   document.getElementById("namain-done").classList.add('d-none');
